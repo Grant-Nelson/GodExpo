@@ -1,9 +1,13 @@
-package main
+package app
 
 import (
 	"bufio"
+	"fmt"
 	"go/ast"
+	"go/token"
 	"os"
+	"path"
+	"path/filepath"
 	"strings"
 )
 
@@ -18,6 +22,20 @@ type variable struct {
 func isDir(filename string) bool {
 	fi, err := os.Stat(filename)
 	return err == nil && fi.IsDir()
+}
+
+func getPackagePath(fset *token.FileSet, f *ast.File) string {
+	return path.Dir(filepath.ToSlash(fset.Position(f.Package).Filename))
+}
+
+func calcLoc(fset *token.FileSet, start, end token.Pos, fname string) int {
+	fLine := fset.Position(start).Line
+	eLine := fset.Position(end).Line
+	loc := eLine - fLine + 1
+	if loc < 0 {
+		panic(fmt.Errorf(`got a negative Loc (%d - %d + 1 = %d) in %s`, eLine, fLine, loc, fname))
+	}
+	return loc
 }
 
 func recvString(recv ast.Expr) string {
@@ -55,18 +73,17 @@ func isAlphaNumeric(c byte) bool {
 
 func findLine(file string, pos int) string {
 	f, err := os.Open(file)
-	defer f.Close()
-
 	if err != nil {
-		return "ERROR"
+		panic(err)
 	}
+	defer f.Close()
 
 	bf := bufio.NewReader(f)
 	var line string
 	for lnum := 0; lnum < pos; lnum++ {
 		line, err = bf.ReadString('\n')
 		if err != nil {
-			return "ERROR"
+			panic(err)
 		}
 	}
 

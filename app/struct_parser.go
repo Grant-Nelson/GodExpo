@@ -1,4 +1,4 @@
-package main
+package app
 
 import (
 	"go/ast"
@@ -7,6 +7,7 @@ import (
 
 type Struct struct {
 	PkgName    string
+	PkgPath    string
 	StructName string
 	Attributes []variable
 	Methods    []Method
@@ -24,10 +25,11 @@ func (c *Struct) addMethod(m Method) {
 	c.Methods = append(c.Methods, m)
 }
 
-func findStructsFromFile(fset *token.FileSet, f *ast.File) []Struct {
+func findStructsFromFile(fset *token.FileSet, f *ast.File, stats *Stats) []Struct {
 	var structs []Struct
 
 	pkgName := f.Name.Name
+	pkgPath := getPackagePath(fset, f)
 
 	findStructs := func(n ast.Node) bool {
 		t, ok := n.(*ast.TypeSpec)
@@ -39,6 +41,7 @@ func findStructsFromFile(fset *token.FileSet, f *ast.File) []Struct {
 		structName := t.Name.Name
 		var attributes []variable
 
+		stats.RecordType(fset, t)
 		x, ok := t.Type.(*ast.StructType)
 		if !ok {
 			return true
@@ -72,6 +75,7 @@ func findStructsFromFile(fset *token.FileSet, f *ast.File) []Struct {
 
 		c := Struct{
 			PkgName:    pkgName,
+			PkgPath:    pkgPath,
 			StructName: structName,
 			Attributes: attributes,
 			Pos:        fset.Position(t.Pos()),

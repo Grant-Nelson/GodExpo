@@ -1,4 +1,4 @@
-package main
+package app
 
 import (
 	"go/ast"
@@ -7,6 +7,7 @@ import (
 
 type Method struct {
 	PkgName           string
+	PkgPath           string
 	StructName        string
 	FuncName          string
 	Complexity        int
@@ -16,13 +17,18 @@ type Method struct {
 	SelfVarAccessed   []selector
 	OthersVarAccessed []selector
 	Pos               token.Position
+	LOC               int
 }
 
-func findMethodsFromFile(fset *token.FileSet, f *ast.File, fname string) []Method {
+func findMethodsFromFile(fset *token.FileSet, f *ast.File, stats *Stats, fname string) []Method {
 	var methods []Method
+
+	pkgName := f.Name.Name
+	pkgPath := getPackagePath(fset, f)
 
 	for _, decl := range f.Decls {
 		if fn, ok := decl.(*ast.FuncDecl); ok {
+			stats.RecordFunc(fset, fn, fname)
 
 			if fn.Recv == nil || fn.Recv.List[0].Names == nil {
 				continue
@@ -59,7 +65,8 @@ func findMethodsFromFile(fset *token.FileSet, f *ast.File, fname string) []Metho
 			}
 
 			method := Method{
-				PkgName:    f.Name.Name,
+				PkgName:    pkgName,
+				PkgPath:    pkgPath,
 				StructName: structName,
 				FuncName:   funcName,
 				Receiver:   rcv,
@@ -67,8 +74,10 @@ func findMethodsFromFile(fset *token.FileSet, f *ast.File, fname string) []Metho
 				Selectors:  varAll.selectors,
 				Complexity: complexity(fn),
 				Pos:        fset.Position(fn.Pos()),
+				LOC:        calcLoc(fset, fn.Pos(), fn.End(), fname),
 			}
 			method.separateAccessedVars()
+			stats.RecordFinishedFunc(method)
 
 			methods = append(methods, method)
 		}

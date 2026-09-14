@@ -1,4 +1,4 @@
-package main
+package app
 
 var WMC int = 47
 var ATFD int = 5

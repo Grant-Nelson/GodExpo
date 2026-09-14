@@ -1,8 +1,9 @@
-package main
+package app
 
 import (
 	"flag"
 	"fmt"
+	"go/token"
 	"io/ioutil"
 	"log"
 	"os"
@@ -12,8 +13,7 @@ import (
 	"time"
 )
 
-func main() {
-
+func Run() {
 	wmc := flag.Int("wmc", 47, "Weighted method complexity")
 	atfd := flag.Int("atfd", 5, "Access to foreign data")
 	tcc := flag.Float64("tcc", 0.3, "Tight class cohesion")
@@ -68,14 +68,15 @@ func main() {
 	// FLAG STUFF DONE
 
 	var structs []Struct
+	var stats *Stats
 
 	start := time.Now()
 
 	if *f != "" {
-		structs = analyze(*f)
+		structs, stats = analyze(*f)
 		viewFileMetrics(structs)
 	} else if *d != "" {
-		structs = analyze(*d)
+		structs, stats = analyze(*d)
 		viewProjectMetrics(structs)
 	} else if *e != "" {
 		dirs, err := ioutil.ReadDir(*e)
@@ -98,7 +99,7 @@ func main() {
 		table := map[string]map[string]string{}
 
 		for _, r := range versionPaths {
-			structs := analyze(r)
+			structs, _ := analyze(r)
 
 			for _, s := range structs {
 				if s.God {
@@ -149,10 +150,11 @@ func main() {
 		// }
 	}
 
+	stats.Print()
 	fmt.Fprintf(os.Stderr, "Execution time: %s\n", time.Since(start))
 }
 
-func analyze(path string) []Struct {
+func analyze(path string) ([]Struct, *Stats) {
 	// var structs []Struct
 	// var methods []Method
 
@@ -163,15 +165,23 @@ func analyze(path string) []Struct {
 	// 	methods = append(methods, newMethods...)
 	// }
 
-	structs, methods := parsePath(path)
+	fset := token.NewFileSet()
+	stats := NewStats()
+	structs, methods := parsePath(fset, stats, path)
 
 	// Assign the methods to structs
 	for _, m := range methods {
+		assigned := []Struct{}
 		for i, c := range structs {
 			if m.PkgName == c.PkgName && m.StructName == c.StructName {
+				// if m.PkgPath == c.PkgPath && m.StructName == c.StructName {
+				assigned = append(assigned, c)
 				structs[i].addMethod(m)
+				//} else if m.PkgName == c.PkgName && m.StructName == c.StructName {
+				//	fmt.Printf("[>>] Common package name: %s in %s and %s\n", m.PkgName, m.PkgPath, c.PkgPath)
 			}
 		}
+		stats.RecordMethodAssignment(m, assigned)
 	}
 
 	// Calculate metrics
@@ -184,7 +194,8 @@ func analyze(path string) []Struct {
 		s.God = GodStruct(s)
 		s.DemiGod = DemiGodStruct(s)
 		structs[i] = s
+		stats.RecordFinishedStruct(s)
 	}
 
-	return structs
+	return structs, stats
 }
