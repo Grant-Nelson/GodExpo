@@ -32,7 +32,13 @@ git clone https://github.com/Grant-Nelson/GodExpo
 Build the project with
 
 ```Bash
-go build -o godExpo  main.go
+go build -o godExpo main.go
+```
+
+Or run the project with
+
+```Bash
+go run main.go
 ```
 
 ## Running the Tool

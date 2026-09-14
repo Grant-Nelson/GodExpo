@@ -24,11 +24,21 @@ func Run() {
 	e := flag.String("e", "", "evolution of god structs with each release")
 	// csv := flag.Bool("csv", false, )
 
+	sv := flag.Bool(`sv`, false, `skip vendor files`)
+	st := flag.Bool(`st`, false, `skip test files (_test.go)`)
+	mp := flag.Bool(`mp`, false, `match package paths`)
+	bc := flag.Bool(`bc`, false, `match build constraints`)
+
 	flag.Parse()
 
 	WMC = *wmc
 	ATFD = *atfd
 	TCC = *tcc
+
+	skipVendor = *sv
+	skipTestFiles = *st
+	matchPkgPaths = *mp
+	matchBuildConstraints = *bc
 
 	argsProvided := 0
 
@@ -173,12 +183,18 @@ func analyze(path string) ([]Struct, *Stats) {
 	for _, m := range methods {
 		assigned := []Struct{}
 		for i, c := range structs {
-			if m.PkgName == c.PkgName && m.StructName == c.StructName {
-				// if m.PkgPath == c.PkgPath && m.StructName == c.StructName {
+			if matchPkgPaths {
+				if m.StructName == c.StructName {
+					if m.PkgPath == c.PkgPath {
+						assigned = append(assigned, c)
+						structs[i].addMethod(m)
+					} else if m.PkgName == c.PkgName {
+						stats.Logf(`Common package name: %s in %s and %s`, m.PkgName, m.PkgPath, c.PkgPath)
+					}
+				}
+			} else if m.PkgName == c.PkgName && m.StructName == c.StructName {
 				assigned = append(assigned, c)
 				structs[i].addMethod(m)
-				//} else if m.PkgName == c.PkgName && m.StructName == c.StructName {
-				//	fmt.Printf("[>>] Common package name: %s in %s and %s\n", m.PkgName, m.PkgPath, c.PkgPath)
 			}
 		}
 		stats.RecordMethodAssignment(m, assigned)

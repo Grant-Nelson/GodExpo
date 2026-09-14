@@ -19,19 +19,28 @@ func parsePath(fset *token.FileSet, stats *Stats, file string) ([]Struct, []Meth
 			if err != nil {
 				return err
 			}
-			//if info.IsDir() {
-			//	if strings.HasSuffix(filepath.ToSlash(path), `/vendor`) {
-			//		return filepath.SkipDir
-			//	}
-			//	return err
-			//}
-			//if strings.HasSuffix(path, "_test.go") {
-			//	return err
-			//}
+			if info.IsDir() {
+				if skipVendor && strings.HasSuffix(filepath.ToSlash(path), `/vendor`) {
+					return filepath.SkipDir
+				}
+				return err
+			}
 			if strings.HasSuffix(path, ".go") {
-				f, err := parser.ParseFile(fset, path, nil, 0)
+				if skipTestFiles && strings.HasSuffix(path, "_test.go") {
+					return err
+				}
+
+				f, err := parser.ParseFile(fset, path, nil, parser.ParseComments)
 				if err != nil {
 					log.Fatal(err)
+				}
+
+				if matchBuildConstraints {
+					if expr := readBuildConstraint(f); expr != nil {
+						if !expr.Eval(isBuildConstraint) {
+							return err
+						}
+					}
 				}
 
 				fmt.Fprintf(os.Stderr, "[*] Analyzing: %s\n", path)

@@ -7,10 +7,26 @@ import (
 	"go/build/constraint"
 	"go/printer"
 	"go/token"
+	"os"
+	"path"
+	"path/filepath"
 	"sort"
 )
 
+var (
+	skipVendor            = false
+	skipTestFiles         = false
+	matchPkgPaths         = false
+	matchBuildConstraints = false
+
+	buildConstraints = map[string]bool{
+		`linux`: true,
+		`amd64`: true,
+	}
+)
+
 type Stats struct {
+	fileCount         int
 	skippedTypes      int
 	totalInterfaces   int
 	totalTypes        int
@@ -33,9 +49,9 @@ type Stats struct {
 	maxOverAssignCount int
 	maxOverAssign      Method
 
-	funcSumOfWMC   int
-	structSumOfWMC int
-	everyWMC       int
+	assignedFuncComplexity int
+	structSumOfWMC         int
+	sumFuncComplexity      int
 }
 
 func NewStats() *Stats {
@@ -47,10 +63,10 @@ func (s *Stats) Logf(format string, args ...interface{}) {
 		return
 	}
 	if len(format) == 0 {
-		fmt.Println()
+		fmt.Fprintln(os.Stderr)
 		return
 	}
-	fmt.Printf(`[!] `+format+"\n", args...)
+	fmt.Fprintf(os.Stderr, `[!] `+format+"\n", args...)
 }
 
 func (s *Stats) RecordFile(fSet *token.FileSet, f *ast.File, path string) {
@@ -58,18 +74,14 @@ func (s *Stats) RecordFile(fSet *token.FileSet, f *ast.File, path string) {
 		return
 	}
 
+	s.fileCount++
+
 	fLoc := calcLoc(fSet, f.FileStart, f.FileEnd, path)
 	// s.Logf(`File LOC: %d <= %s`, fLoc, path)
 	s.filesTotalLOC += fLoc
 
-	if f.Doc != nil {
-		for _, line := range f.Doc.List {
-			if line != nil {
-				if exp, err := constraint.Parse(line.Text); err != nil {
-					s.Logf(`File build constraint %s <= %s`, exp.String(), path)
-				}
-			}
-		}
+	if c := readBuildConstraint(f); c != nil {
+		s.Logf(`File build constraint %s <= %s`, c.String(), path)
 	}
 }
 
@@ -78,7 +90,7 @@ func (s *Stats) RecordFunc(fSet *token.FileSet, fn *ast.FuncDecl, path string) {
 		return
 	}
 
-	s.everyWMC += complexity(fn)
+	s.sumFuncComplexity += complexity(fn)
 	loc := calcLoc(fSet, fn.Pos(), fn.End(), path)
 
 	s.totalFuncs++
@@ -87,14 +99,6 @@ func (s *Stats) RecordFunc(fSet *token.FileSet, fn *ast.FuncDecl, path string) {
 		s.skippedFuncs++
 		s.skippedLOC += loc
 	}
-}
-
-func (s *Stats) RecordFinishedFunc(m Method) {
-	if s == nil {
-		return
-	}
-
-	s.funcSumOfWMC += m.Complexity
 }
 
 func (s *Stats) RecordType(fSet *token.FileSet, t *ast.TypeSpec) {
@@ -127,11 +131,17 @@ func (s *Stats) RecordMethodAssignment(m Method, assigned []Struct) {
 		if s.maxUnassigned.LOC < m.LOC {
 			s.maxUnassigned = m
 		}
-	} else if len(assigned) >= 2 {
-		s.Logf(`Over-assigned %s:%s:%s @ %s`, m.PkgName, m.StructName, m.FuncName, m.Pos.String())
-		s.Logf("\tComplexity: %d", m.Complexity)
+		return
+	}
+
+	s.assignedFuncComplexity += m.Complexity
+
+	if len(assigned) >= 2 {
+		s.Logf(`Over-assigned %s.%s.%s`, m.PkgName, m.StructName, m.FuncName)
+		s.Logf(`  Path:       %s`, m.Pos.String())
+		s.Logf(`  Complexity: %6d`, m.Complexity)
 		for i, st := range assigned {
-			s.Logf("\t%d. %s:%s @ %s", i, st.PkgName, st.StructName, st.Pos.String())
+			s.Logf(`  %d. %s:%s @ %s`, i, st.PkgName, st.StructName, st.Pos.String())
 		}
 		s.Logf(``)
 
@@ -162,29 +172,84 @@ func (s *Stats) Print() {
 	if s == nil {
 		return
 	}
-
-	s.Logf(`Types:  total: %d, taken: %d, skipped: %d`, s.totalTypes, s.totalTypes-s.skippedTypes, s.skippedTypes)
-	s.Logf(`Inter:  total: %d, skipped other: %d`, s.totalInterfaces, s.skippedTypes-s.totalInterfaces)
-	s.Logf(`Funcs:  total: %d, taken: %d, skipped: %d`, s.totalFuncs, s.totalFuncs-s.skippedFuncs, s.skippedFuncs)
-	s.Logf(`Fn LOC: total: %d, taken: %d, skipped: %d`, s.totalLOC, s.totalLOC-s.skippedLOC, s.skippedLOC)
+	s.Logf(``)
+	s.Logf(`Number of files:      %6d`, s.fileCount)
+	s.Logf(`Total file LOC:       %6d`, s.filesTotalLOC)
+	s.Logf(`Total types:          %6d`, s.totalTypes)
+	s.Logf(`Used struct types:    %6d`, s.totalTypes-s.skippedTypes)
+	s.Logf(`Total skipped types:  %6d`, s.skippedTypes)
+	s.Logf(`  Skipped interfaces: %6d`, s.totalInterfaces)
+	s.Logf(`  Skipped other:      %6d`, s.skippedTypes-s.totalInterfaces)
+	s.Logf(`Total funcs:          %6d (%6d LOC)`, s.totalFuncs, s.totalLOC)
+	s.Logf(`Used funcs:           %6d (%6d LOC)`, s.totalFuncs-s.skippedFuncs, s.totalLOC-s.skippedLOC)
+	s.Logf(`Total skipped funcs:  %6d (%6d LOC)`, s.skippedFuncs, s.skippedLOC)
 	s.Logf(``)
 
-	s.Logf(`Unassigned Funcs: %d, Total LOC: %d, File LOC: %d`, s.unassignedFunc, s.totalUnassignedLOC, s.filesTotalLOC)
-	s.Logf(`Max Unassigned Funcs: %s:%s:%s, CC: %d, LOC: %d`,
-		s.maxUnassigned.PkgName, s.maxUnassigned.StructName, s.maxUnassigned.FuncName, s.maxUnassigned.Complexity, s.maxUnassigned.LOC)
+	s.Logf(`Unassigned funcs:          %6d`, s.unassignedFunc)
+	s.Logf(`LOC from unassigned funcs: %6d`, s.totalUnassignedLOC)
+	s.Logf(`Max unassigned func: %s.%s.%s`, s.maxUnassigned.PkgName, s.maxUnassigned.StructName, s.maxUnassigned.FuncName)
+	s.Logf(`  Path:       %s`, s.maxUnassigned.Pos.String())
+	s.Logf(`  Complexity: %6d`, s.maxUnassigned.Complexity)
+	s.Logf(`  LOC:        %6d`, s.maxUnassigned.LOC)
 	s.Logf(``)
 
-	s.Logf(`Over-assigned: %d, Total Over: %d, Sum LOC: %d, Total LOC: %d`, s.overAssignFunc, s.totalOverAssign, s.sumOverAssignLOC, s.totalOverAssignLOC)
-	s.Logf(`Max Over-assigned: %s:%s:%s, Count: %d, CC: %d, LOC: %d`,
-		s.maxOverAssign.PkgName, s.maxOverAssign.StructName, s.maxOverAssign.FuncName, s.maxOverAssignCount, s.maxOverAssign.Complexity, s.maxOverAssign.LOC)
+	s.Logf(`Over-assigned funcs:           %6d`, s.overAssignFunc)
+	s.Logf(`Sum of over-assignments:       %6d`, s.totalOverAssign)
+	s.Logf(`Sum of over-assigned func LOC: %6d`, s.sumOverAssignLOC)
+	s.Logf(`Sum of over-represented LOC:   %6d`, s.totalOverAssignLOC)
+	s.Logf(`Max over-assigned: %s.%s.%s`, s.maxOverAssign.PkgName, s.maxOverAssign.StructName, s.maxOverAssign.FuncName)
+	s.Logf(`  Path:             %s`, s.maxOverAssign.Pos.String())
+	s.Logf(`  Over-assignments: %6d`, s.maxOverAssignCount)
+	s.Logf(`  Complexity:       %6d`, s.maxOverAssign.Complexity)
+	s.Logf(`  LOC:              %6d`, s.maxOverAssign.LOC)
 	s.Logf(``)
 
-	s.Logf(`Func WMC: %d, Struct WMC: %d, All WMC: %d`, s.funcSumOfWMC, s.structSumOfWMC, s.everyWMC)
+	s.Logf(`Sum of all func complexity:  %6d`, s.sumFuncComplexity)
+	s.Logf(`Sum of used func complexity: %6d`, s.assignedFuncComplexity)
+	s.Logf(`Sum of struct WMC:           %6d`, s.structSumOfWMC)
 	s.Logf(``)
 
 	s.Logf(`Skipped Types (no underlying struct):`)
+	const skippedUnderlyingLimit = 100
 	sort.Strings(s.skippedUnderlying)
 	for i, t := range s.skippedUnderlying {
-		s.Logf("\t%d. %q", i+1, t)
+		if i >= skippedUnderlyingLimit {
+			s.Logf(`  ... (+%d more)`, len(s.skippedUnderlying)-skippedUnderlyingLimit)
+			break
+		}
+		s.Logf(`  %d. %q`, i+1, t)
 	}
+}
+
+func getPackagePath(fset *token.FileSet, f *ast.File) string {
+	return path.Dir(filepath.ToSlash(fset.Position(f.Package).Filename))
+}
+
+func calcLoc(fset *token.FileSet, start, end token.Pos, fname string) int {
+	fLine := fset.Position(start).Line
+	eLine := fset.Position(end).Line
+	loc := eLine - fLine + 1
+	if loc < 0 {
+		panic(fmt.Errorf(`got a negative Loc (%d - %d + 1 = %d) in %s`, eLine, fLine, loc, fname))
+	}
+	return loc
+}
+
+// See https://pkg.go.dev/cmd/go#hdr-Build_constraints
+// And https://pkg.go.dev/go/build/constraint
+func readBuildConstraint(f *ast.File) constraint.Expr {
+	for _, group := range f.Comments {
+		for _, line := range group.List {
+			if line != nil {
+				if expr, err := constraint.Parse(line.Text); err == nil {
+					return expr
+				}
+			}
+		}
+	}
+	return nil
+}
+
+func isBuildConstraint(tag string) bool {
+	return buildConstraints[tag]
 }

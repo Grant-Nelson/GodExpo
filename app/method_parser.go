@@ -77,7 +77,6 @@ func findMethodsFromFile(fset *token.FileSet, f *ast.File, stats *Stats, fname s
 				LOC:        calcLoc(fset, fn.Pos(), fn.End(), fname),
 			}
 			method.separateAccessedVars()
-			stats.RecordFinishedFunc(method)
 
 			methods = append(methods, method)
 		}
