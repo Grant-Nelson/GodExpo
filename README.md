@@ -17,7 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Golang must be installed (>= v1.10). To install golang in ubuntu run-
 
-```
+```Bash
 sudo apt-get install golang
 ```
 
@@ -25,26 +25,14 @@ sudo apt-get install golang
 
 At first, download the project-
 
-```
-git clone https://github.com/rafed123/GodExpo
-```
-
-Navigate to the source files
-
-```
-cd GodExpo/app/
+```Bash
+git clone https://github.com/Grant-Nelson/GodExpo
 ```
 
 Build the project with
 
-```
-./build.sh
-```
-
-or (Project must be in $GOPATH)
-
-```
-go build -o godExpo
+```Bash
+go build -o godExpo  main.go
 ```
 
 ## Running the Tool
@@ -57,7 +45,8 @@ You can now run the tool on go projects to-
 * Set custom thresholds for metric calculations
 
 ### 1. Show Struct Summary
-```
+
+```Bash
 ./godExpo -f path_to_file.go
 ```
 
@@ -66,7 +55,8 @@ Sample output-
 ![Struct sumary](img/file.png)
 
 ### 2. Find God Structs
-```
+
+```Bash
 ./godExpo -d path_to_directory/
 ```
 
@@ -75,7 +65,8 @@ Sample output-
 ![Find god structs](img/project.png)
 
 ### 3. Show evolution of god structs
-```
+
+```Bash
 ./godExpo -e path_to_directory/
 ```
 * Directory should have different versions of a project
@@ -88,17 +79,20 @@ Sample output-
 ### 4. Set Custom Thresholds for Metric Calculations
 
 Set custom WMC
-```
+
+```Bash
 ./godExpo -wmc 50 -d path_to_directory/
 ```
 
 Set custom ATFD
-```
+
+```Bash
 ./godExpo -atfd 10 -d path_to_directory/
 ```
 
 Set custom TCC
-```
+
+```Bash
 ./godExpo -tcc 0.5 -d path_to_directory/
 ```
 
