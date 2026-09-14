@@ -1,3 +1,10 @@
+# A Reproducibility and Validity Study of God Class Detection in Go
+
+This project contains modifications to GodExpo as part of analysis
+and investigation of of GodExpo's correctness.
+
+---
+
 # GodExpo
 
 GodExpo is a God Struct smell detector for Golang.
