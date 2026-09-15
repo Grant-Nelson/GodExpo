@@ -528,7 +528,7 @@ Location: ../../gohugoio/hugo/tpl/tplimpl/template.go:86:6
 [!] Unassigned funcs:             124
 [!] LOC from unassigned funcs:   1356
 [!] Max unassigned func: tplimpl.decl.indexOfReplacementStart
-[!]   Path:       ../../gohugoio/hugo/tpl/tplimpl/template_ast_transformers.go:162:1
+[!]   Path:       tpl/tplimpl/template_ast_transformers.go:162
 [!]   Complexity:     23
 [!]   LOC:            88
 
@@ -537,7 +537,7 @@ Location: ../../gohugoio/hugo/tpl/tplimpl/template.go:86:6
 [!] Sum of over-assigned func LOC:     84
 [!] Sum of over-represented LOC:      168
 [!] Max over-assigned: partials.Namespace.Include
-[!]   Path:             ../../gohugoio/hugo/tpl/partials/partials.go:65:1
+[!]   Path:             tpl/partials/partials.go:65
 [!]   Over-assignments:      2
 [!]   Complexity:            9
 [!]   LOC:                  45
@@ -616,4 +616,4 @@ Location: ../../gohugoio/hugo/tpl/tplimpl/template.go:86:6
 [!]    67. tstEqerType2 string @ tpl/compare/compare_test.go:32
 [!]    68. tstGroupers []*tstGrouper @ tpl/collections/collections_test.go:78
 [!]    69. tstSlicers []*tstSlicer @ common/collections/slice_test.go:99
-Execution time: 315.76375ms
+Execution time: 325.417542ms

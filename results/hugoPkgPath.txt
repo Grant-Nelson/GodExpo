@@ -327,7 +327,7 @@ Location: ../../gohugoio/hugo/tpl/tplimpl/template.go:86:6
 [!] Unassigned funcs:             120
 [!] LOC from unassigned funcs:   1344
 [!] Max unassigned func: tplimpl.decl.indexOfReplacementStart
-[!]   Path:       ../../gohugoio/hugo/tpl/tplimpl/template_ast_transformers.go:162:1
+[!]   Path:       tpl/tplimpl/template_ast_transformers.go:162
 [!]   Complexity:     23
 [!]   LOC:            88
 
@@ -335,11 +335,6 @@ Location: ../../gohugoio/hugo/tpl/tplimpl/template.go:86:6
 [!] Sum of over-assignments:            0
 [!] Sum of over-assigned func LOC:      0
 [!] Sum of over-represented LOC:        0
-[!] Max over-assigned: ..
-[!]   Path:             -
-[!]   Over-assignments:      0
-[!]   Complexity:            0
-[!]   LOC:                   0
 
 [!] Sum of all func complexity:    6995
 [!] Sum of used func complexity:   4336
@@ -404,4 +399,4 @@ Location: ../../gohugoio/hugo/tpl/tplimpl/template.go:86:6
 [!]    56. releaseNotesState int @ releaser/releaser.go:35
 [!]    57. stateFunc func(*absurllexer) stateFunc @ transform/urlreplacers/absurlreplacer.go:54
 [!]    58. stateFunc func(*pageLexer) stateFunc @ parser/pageparser/pagelexer.go:30
-Execution time: 267.729ms
+Execution time: 270.976ms

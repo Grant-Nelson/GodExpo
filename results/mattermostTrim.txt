@@ -615,7 +615,7 @@ Location: ../../mattermost/mattermost/store/local_cache_supplier.go:27:6
 [!] Unassigned funcs:              21
 [!] LOC from unassigned funcs:    139
 [!] Max unassigned func: model.ChannelList.Etag
-[!]   Path:       ../../mattermost/mattermost/model/channel_list.go:21:1
+[!]   Path:       model/channel_list.go:21
 [!]   Complexity:      4
 [!]   LOC:            21
 
@@ -623,11 +623,6 @@ Location: ../../mattermost/mattermost/store/local_cache_supplier.go:27:6
 [!] Sum of over-assignments:            0
 [!] Sum of over-assigned func LOC:      0
 [!] Sum of over-represented LOC:        0
-[!] Max over-assigned: ..
-[!]   Path:             -
-[!]   Over-assignments:      0
-[!]   Complexity:            0
-[!]   LOC:                   0
 
 [!] Sum of all func complexity:   18889
 [!] Sum of used func complexity:  12151
@@ -650,13 +645,7 @@ Location: ../../mattermost/mattermost/store/local_cache_supplier.go:27:6
 [!]    14. Context web.Context @ api4/handlers.go:12
 [!]    15. DialContextFunction func(ctx context.Context, network, addr string) (net.Conn, error) @ services/httpservice/client.go:58
 [!]    16. Field zapcore.Field @ mlog/log.go:28
-[!]    17. JSONMessageHeaderInbucket []struct {
-	Mailbox			string
-	ID			string	`json:"Id"`
-	From, Subject, Date	string
-	To			[]string
-	Size			int
-} @ services/mailservice/inbucket.go:22
+[!]    17. JSONMessageHeaderInbucket []struct { Mailbox string; ID string `json:"Id"`; From, Subject, Date string; To []string; Size int } @ services/mailservice/inbucket.go:22
 [!]    18. LayeredStoreHint int @ store/layered_store_hints.go:6
 [!]    19. LogFunc func(string, ...Field) @ mlog/global.go:28
 [!]    20. Mock mock.Mock @ plugin/plugintest/mock/mock.go:20
@@ -683,4 +672,4 @@ Location: ../../mattermost/mattermost/store/local_cache_supplier.go:27:6
 [!]    41. delimiterType int @ utils/markdown/inlines.go:104
 [!]    42. multiPluginHookRunnerFunc func(hooks Hooks) bool @ plugin/environment.go:25
 [!]    43. teamMemberWithSchemeRolesList []teamMemberWithSchemeRoles @ store/sqlstore/team_store.go:56
-Execution time: 997.656208ms
+Execution time: 1.01231725s

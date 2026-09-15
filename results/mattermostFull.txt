@@ -11554,7 +11554,7 @@ Location: ../../mattermost/mattermost/vendor/go.uber.org/zap/zapcore/json_encode
 [!] Unassigned funcs:             960
 [!] LOC from unassigned funcs:   7484
 [!] Max unassigned func: japanese.iso2022JPEncoder.Transform
-[!]   Path:       ../../mattermost/mattermost/vendor/golang.org/x/text/encoding/japanese/iso2022jp.go:152:1
+[!]   Path:       vendor/golang.org/x/text/encoding/japanese/iso2022jp.go:152
 [!]   Complexity:     41
 [!]   LOC:           148
 
@@ -11563,7 +11563,7 @@ Location: ../../mattermost/mattermost/vendor/go.uber.org/zap/zapcore/json_encode
 [!] Sum of over-assigned func LOC:   6649
 [!] Sum of over-represented LOC:    31784
 [!] Max over-assigned: unix.Iovec.SetLen
-[!]   Path:             ../../mattermost/mattermost/vendor/golang.org/x/sys/unix/syscall_aix_ppc.go:24:1
+[!]   Path:             vendor/golang.org/x/sys/unix/syscall_aix_ppc.go:24
 [!]   Over-assignments:     30
 [!]   Complexity:            1
 [!]   LOC:                   3
@@ -11674,4 +11674,4 @@ Location: ../../mattermost/mattermost/vendor/go.uber.org/zap/zapcore/json_encode
 [!]    99. Cmsghdr C.struct_cmsghdr @ vendor/golang.org/x/sys/unix/types_openbsd.go:146
 [!]   100. Cmsghdr C.struct_cmsghdr @ vendor/golang.org/x/sys/unix/types_solaris.go:159
 [!]   ... (+1269 more)
-Execution time: 3.790600958s
+Execution time: 3.774710416s

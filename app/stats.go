@@ -29,6 +29,8 @@ var (
 	}
 
 	vendorPathRegex = regexp.MustCompile(`(?:^|/)vendor(?:$|/)`)
+	endOfLineRegex  = regexp.MustCompile(`[ \t]*\n`)
+	whiteSpaceRegex = regexp.MustCompile(`\s+`)
 )
 
 type Stats struct {
@@ -70,14 +72,14 @@ type Stats struct {
 
 	unassignedFunc     int
 	totalUnassignedLoc int
-	maxUnassigned      Method
+	maxUnassigned      *Method
 
 	overAssignFunc     int
 	sumOverAssignLoc   int
 	totalOverAssignLoc int
 	totalOverAssign    int
 	maxOverAssignCount int
-	maxOverAssign      Method
+	maxOverAssign      *Method
 
 	assignedFuncComplexity int
 	structSumOfWmc         int
@@ -214,7 +216,12 @@ func (s *Stats) RecordType(fSet *token.FileSet, t *ast.TypeSpec) {
 		} else {
 			under := &bytes.Buffer{}
 			printer.Fprint(under, fSet, t.Type)
-			decl := fmt.Sprintf(`%s %s @ %s:%d`, t.Name.Name, under.String(), path, pos.Line)
+			ut := under.String()
+			ut = endOfLineRegex.ReplaceAllString(ut, `;`)
+			ut = whiteSpaceRegex.ReplaceAllString(ut, ` `)
+			ut = strings.ReplaceAll(ut, `{;`, `{`)
+			ut = strings.ReplaceAll(ut, `;}`, ` }`)
+			decl := fmt.Sprintf(`%s %s @ %s:%d`, t.Name.Name, ut, path, pos.Line)
 
 			if s.skippedUnderlying == nil {
 				s.skippedUnderlying = map[string]int{}
@@ -249,8 +256,8 @@ func (s *Stats) RecordMethodAssignment(m Method, assigned []Struct) {
 	if len(assigned) <= 0 {
 		s.unassignedFunc++
 		s.totalUnassignedLoc += m.Loc
-		if s.maxUnassigned.Loc < m.Loc {
-			s.maxUnassigned = m
+		if s.maxUnassigned == nil || s.maxUnassigned.Loc < m.Loc {
+			s.maxUnassigned = &m
 		}
 		return
 	}
@@ -272,12 +279,12 @@ func (s *Stats) RecordMethodAssignment(m Method, assigned []Struct) {
 		s.sumOverAssignLoc += m.Loc
 		s.totalOverAssignLoc += (m.Loc * len(assigned))
 		s.totalOverAssign += len(assigned)
-		if s.maxOverAssignCount < len(assigned) {
+		if s.maxOverAssign == nil || s.maxOverAssignCount < len(assigned) {
 			s.maxOverAssignCount = len(assigned)
-			s.maxOverAssign = m
+			s.maxOverAssign = &m
 		} else if s.maxOverAssignCount == len(assigned) {
 			if s.maxOverAssign.Loc < m.Loc {
-				s.maxOverAssign = m
+				s.maxOverAssign = &m
 			}
 		}
 	}
@@ -324,21 +331,27 @@ func (s *Stats) Print() {
 
 	s.Logf(`Unassigned funcs:          %6d`, s.unassignedFunc)
 	s.Logf(`LOC from unassigned funcs: %6d`, s.totalUnassignedLoc)
-	s.Logf(`Max unassigned func: %s.%s.%s`, s.maxUnassigned.PkgName, s.maxUnassigned.StructName, s.maxUnassigned.FuncName)
-	s.Logf(`  Path:       %s`, s.maxUnassigned.Pos.String())
-	s.Logf(`  Complexity: %6d`, s.maxUnassigned.Complexity)
-	s.Logf(`  LOC:        %6d`, s.maxUnassigned.Loc)
+	if s.maxUnassigned != nil {
+		path := trimBasePath(filepath.ToSlash(s.maxUnassigned.Pos.Filename))
+		s.Logf(`Max unassigned func: %s.%s.%s`, s.maxUnassigned.PkgName, s.maxUnassigned.StructName, s.maxUnassigned.FuncName)
+		s.Logf(`  Path:       %s:%d`, path, s.maxUnassigned.Pos.Line)
+		s.Logf(`  Complexity: %6d`, s.maxUnassigned.Complexity)
+		s.Logf(`  LOC:        %6d`, s.maxUnassigned.Loc)
+	}
 	s.Logf(``)
 
 	s.Logf(`Over-assigned funcs:           %6d`, s.overAssignFunc)
 	s.Logf(`Sum of over-assignments:       %6d`, s.totalOverAssign)
 	s.Logf(`Sum of over-assigned func LOC: %6d`, s.sumOverAssignLoc)
 	s.Logf(`Sum of over-represented LOC:   %6d`, s.totalOverAssignLoc)
-	s.Logf(`Max over-assigned: %s.%s.%s`, s.maxOverAssign.PkgName, s.maxOverAssign.StructName, s.maxOverAssign.FuncName)
-	s.Logf(`  Path:             %s`, s.maxOverAssign.Pos.String())
-	s.Logf(`  Over-assignments: %6d`, s.maxOverAssignCount)
-	s.Logf(`  Complexity:       %6d`, s.maxOverAssign.Complexity)
-	s.Logf(`  LOC:              %6d`, s.maxOverAssign.Loc)
+	if s.maxOverAssign != nil {
+		path := trimBasePath(filepath.ToSlash(s.maxOverAssign.Pos.Filename))
+		s.Logf(`Max over-assigned: %s.%s.%s`, s.maxOverAssign.PkgName, s.maxOverAssign.StructName, s.maxOverAssign.FuncName)
+		s.Logf(`  Path:             %s:%d`, path, s.maxOverAssign.Pos.Line)
+		s.Logf(`  Over-assignments: %6d`, s.maxOverAssignCount)
+		s.Logf(`  Complexity:       %6d`, s.maxOverAssign.Complexity)
+		s.Logf(`  LOC:              %6d`, s.maxOverAssign.Loc)
+	}
 	s.Logf(``)
 
 	s.Logf(`Sum of all func complexity:  %6d`, s.sumFuncComplexity)
