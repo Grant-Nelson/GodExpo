@@ -17,7 +17,7 @@ type Method struct {
 	SelfVarAccessed   []selector
 	OthersVarAccessed []selector
 	Pos               token.Position
-	LOC               int
+	Loc               int
 }
 
 func findMethodsFromFile(fset *token.FileSet, f *ast.File, stats *Stats, fname string) []Method {
@@ -74,7 +74,7 @@ func findMethodsFromFile(fset *token.FileSet, f *ast.File, stats *Stats, fname s
 				Selectors:  varAll.selectors,
 				Complexity: complexity(fn),
 				Pos:        fset.Position(fn.Pos()),
-				LOC:        calcLoc(fset, fn.Pos(), fn.End(), fname),
+				Loc:        calcLoc(fset, fn.Pos(), fn.End(), fname),
 			}
 			method.separateAccessedVars()
 

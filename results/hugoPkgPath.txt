@@ -1,0 +1,407 @@
+[!] Command: godExpo -bc -mp -st -sv -d ../../gohugoio/hugo
+
+[*] Analyzing: ../../gohugoio/hugo/bufferpool/bufpool.go
+[*] Analyzing: ../../gohugoio/hugo/cache/partitioned_lazy_cache.go
+[*] Analyzing: ../../gohugoio/hugo/commands/benchmark.go
+[*] Analyzing: ../../gohugoio/hugo/commands/check.go
+[!]   File build constraint [match] "!darwin"
+[*] Analyzing: ../../gohugoio/hugo/commands/check_darwin.go
+[*] Analyzing: ../../gohugoio/hugo/commands/commandeer.go
+[*] Analyzing: ../../gohugoio/hugo/commands/commands.go
+[*] Analyzing: ../../gohugoio/hugo/commands/config.go
+[*] Analyzing: ../../gohugoio/hugo/commands/convert.go
+[*] Analyzing: ../../gohugoio/hugo/commands/env.go
+[*] Analyzing: ../../gohugoio/hugo/commands/gen.go
+[*] Analyzing: ../../gohugoio/hugo/commands/genautocomplete.go
+[*] Analyzing: ../../gohugoio/hugo/commands/genchromastyles.go
+[*] Analyzing: ../../gohugoio/hugo/commands/gendoc.go
+[*] Analyzing: ../../gohugoio/hugo/commands/gendocshelper.go
+[*] Analyzing: ../../gohugoio/hugo/commands/genman.go
+[*] Analyzing: ../../gohugoio/hugo/commands/helpers.go
+[*] Analyzing: ../../gohugoio/hugo/commands/hugo.go
+[*] Analyzing: ../../gohugoio/hugo/commands/hugo_windows.go
+[*] Analyzing: ../../gohugoio/hugo/commands/import_jekyll.go
+[*] Analyzing: ../../gohugoio/hugo/commands/limit_darwin.go
+[*] Analyzing: ../../gohugoio/hugo/commands/limit_others.go
+[!]   File build constraint [match] "!darwin"
+[*] Analyzing: ../../gohugoio/hugo/commands/list.go
+[*] Analyzing: ../../gohugoio/hugo/commands/new.go
+[*] Analyzing: ../../gohugoio/hugo/commands/new_site.go
+[*] Analyzing: ../../gohugoio/hugo/commands/new_theme.go
+[*] Analyzing: ../../gohugoio/hugo/commands/release.go
+[!]   File build constraint [match] "release"
+[*] Analyzing: ../../gohugoio/hugo/commands/server.go
+[*] Analyzing: ../../gohugoio/hugo/commands/server_errors.go
+[*] Analyzing: ../../gohugoio/hugo/commands/static_syncer.go
+[*] Analyzing: ../../gohugoio/hugo/commands/version.go
+[*] Analyzing: ../../gohugoio/hugo/common/collections/append.go
+[*] Analyzing: ../../gohugoio/hugo/common/collections/collections.go
+[*] Analyzing: ../../gohugoio/hugo/common/collections/slice.go
+[*] Analyzing: ../../gohugoio/hugo/common/herrors/error_locator.go
+[*] Analyzing: ../../gohugoio/hugo/common/herrors/errors.go
+[*] Analyzing: ../../gohugoio/hugo/common/herrors/file_error.go
+[*] Analyzing: ../../gohugoio/hugo/common/herrors/line_number_extractors.go
+[*] Analyzing: ../../gohugoio/hugo/common/hugio/readers.go
+[*] Analyzing: ../../gohugoio/hugo/common/hugio/writers.go
+[*] Analyzing: ../../gohugoio/hugo/common/loggers/loggers.go
+[*] Analyzing: ../../gohugoio/hugo/common/maps/maps.go
+[*] Analyzing: ../../gohugoio/hugo/common/maps/scratch.go
+[*] Analyzing: ../../gohugoio/hugo/common/math/math.go
+[*] Analyzing: ../../gohugoio/hugo/common/terminal/colors.go
+[*] Analyzing: ../../gohugoio/hugo/common/types/evictingqueue.go
+[*] Analyzing: ../../gohugoio/hugo/common/types/types.go
+[*] Analyzing: ../../gohugoio/hugo/compare/compare.go
+[*] Analyzing: ../../gohugoio/hugo/config/configProvider.go
+[*] Analyzing: ../../gohugoio/hugo/config/privacy/privacyConfig.go
+[*] Analyzing: ../../gohugoio/hugo/config/services/servicesConfig.go
+[*] Analyzing: ../../gohugoio/hugo/create/content.go
+[*] Analyzing: ../../gohugoio/hugo/create/content_template_handler.go
+[*] Analyzing: ../../gohugoio/hugo/deps/deps.go
+[*] Analyzing: ../../gohugoio/hugo/docshelper/docs.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/content.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/content_renderer.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/docshelper.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/emoji.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/general.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/hugo.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/path.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/pathspec.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/processing_stats.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/pygments.go
+[*] Analyzing: ../../gohugoio/hugo/helpers/url.go
+[*] Analyzing: ../../gohugoio/hugo/hugofs/basepath_real_filename_fs.go
+[*] Analyzing: ../../gohugoio/hugo/hugofs/fs.go
+[*] Analyzing: ../../gohugoio/hugo/hugofs/hashing_fs.go
+[*] Analyzing: ../../gohugoio/hugo/hugofs/language_composite_fs.go
+[*] Analyzing: ../../gohugoio/hugo/hugofs/language_fs.go
+[*] Analyzing: ../../gohugoio/hugo/hugofs/nolstat_fs.go
+[*] Analyzing: ../../gohugoio/hugo/hugofs/noop_fs.go
+[*] Analyzing: ../../gohugoio/hugo/hugofs/rootmapping_fs.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/alias.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/author.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/collections.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/config.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/fileInfo.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/filesystems/basefs.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/gitinfo.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/hugo_info.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/hugo_sites.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/hugo_sites_build.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/media.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/menu.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/multilingual.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/orderedMap.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/page.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pageCache.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pageGroup.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pageSort.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/page_content.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/page_errors.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/page_output.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/page_paths.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/page_resource.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/page_without_content.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pagebundler.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pagebundler_capture.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pagebundler_handlers.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pagecollections.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pagemeta/page_frontmatter.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pagemeta/pagemeta.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pagesPrevNext.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pages_language_merge.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pages_related.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/pagination.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/paths/baseURL.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/paths/paths.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/paths/themes.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/permalinker.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/permalinks.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/prune_resources.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/shortcode.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/site.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/site_output.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/site_render.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/site_sections.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/sitemap.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/taxonomy.go
+[*] Analyzing: ../../gohugoio/hugo/hugolib/translations.go
+[*] Analyzing: ../../gohugoio/hugo/i18n/i18n.go
+[*] Analyzing: ../../gohugoio/hugo/i18n/translationProvider.go
+[*] Analyzing: ../../gohugoio/hugo/langs/language.go
+[*] Analyzing: ../../gohugoio/hugo/livereload/connection.go
+[*] Analyzing: ../../gohugoio/hugo/livereload/hub.go
+[*] Analyzing: ../../gohugoio/hugo/livereload/livereload.go
+[*] Analyzing: ../../gohugoio/hugo/main.go
+[*] Analyzing: ../../gohugoio/hugo/media/docshelper.go
+[*] Analyzing: ../../gohugoio/hugo/media/mediaType.go
+[*] Analyzing: ../../gohugoio/hugo/metrics/metrics.go
+[*] Analyzing: ../../gohugoio/hugo/minifiers/minifiers.go
+[*] Analyzing: ../../gohugoio/hugo/output/docshelper.go
+[*] Analyzing: ../../gohugoio/hugo/output/layout.go
+[*] Analyzing: ../../gohugoio/hugo/output/layout_base.go
+[*] Analyzing: ../../gohugoio/hugo/output/outputFormat.go
+[*] Analyzing: ../../gohugoio/hugo/parser/frontmatter.go
+[*] Analyzing: ../../gohugoio/hugo/parser/metadecoders/decoder.go
+[*] Analyzing: ../../gohugoio/hugo/parser/metadecoders/format.go
+[*] Analyzing: ../../gohugoio/hugo/parser/pageparser/item.go
+[*] Analyzing: ../../gohugoio/hugo/parser/pageparser/pagelexer.go
+[*] Analyzing: ../../gohugoio/hugo/parser/pageparser/pageparser.go
+[*] Analyzing: ../../gohugoio/hugo/publisher/publisher.go
+[*] Analyzing: ../../gohugoio/hugo/related/inverted_index.go
+[*] Analyzing: ../../gohugoio/hugo/releaser/git.go
+[*] Analyzing: ../../gohugoio/hugo/releaser/github.go
+[*] Analyzing: ../../gohugoio/hugo/releaser/releasenotes_writer.go
+[*] Analyzing: ../../gohugoio/hugo/releaser/releaser.go
+[*] Analyzing: ../../gohugoio/hugo/resource/bundler/bundler.go
+[*] Analyzing: ../../gohugoio/hugo/resource/create/create.go
+[*] Analyzing: ../../gohugoio/hugo/resource/image.go
+[*] Analyzing: ../../gohugoio/hugo/resource/image_cache.go
+[*] Analyzing: ../../gohugoio/hugo/resource/integrity/integrity.go
+[*] Analyzing: ../../gohugoio/hugo/resource/minifier/minify.go
+[*] Analyzing: ../../gohugoio/hugo/resource/postcss/postcss.go
+[*] Analyzing: ../../gohugoio/hugo/resource/resource.go
+[*] Analyzing: ../../gohugoio/hugo/resource/resource_cache.go
+[*] Analyzing: ../../gohugoio/hugo/resource/resource_metadata.go
+[*] Analyzing: ../../gohugoio/hugo/resource/smartcrop.go
+[*] Analyzing: ../../gohugoio/hugo/resource/templates/execute_as_template.go
+[*] Analyzing: ../../gohugoio/hugo/resource/tocss/scss/client.go
+[*] Analyzing: ../../gohugoio/hugo/resource/tocss/scss/tocss_notavailable.go
+[!]   File build constraint [match] "!extended"
+[*] Analyzing: ../../gohugoio/hugo/resource/transform.go
+[*] Analyzing: ../../gohugoio/hugo/source/fileInfo.go
+[*] Analyzing: ../../gohugoio/hugo/source/filesystem.go
+[*] Analyzing: ../../gohugoio/hugo/source/sourceSpec.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/cast/cast.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/cast/docshelper.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/cast/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/collections/append.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/collections/apply.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/collections/collections.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/collections/index.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/collections/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/collections/reflect_helpers.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/collections/sort.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/collections/where.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/compare/compare.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/compare/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/crypto/crypto.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/crypto/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/data/cache.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/data/data.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/data/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/data/resources.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/encoding/encoding.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/encoding/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/fmt/fmt.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/fmt/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/images/images.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/images/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/inflect/inflect.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/inflect/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/internal/templatefuncsRegistry.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/lang/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/lang/lang.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/math/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/math/math.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/math/round.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/os/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/os/os.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/partials/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/partials/partials.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/path/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/path/path.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/resources/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/resources/resources.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/safe/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/safe/safe.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/strings/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/strings/regexp.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/strings/strings.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/strings/truncate.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/template.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/templates/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/templates/templates.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/time/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/time/time.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/tplimpl/ace.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/tplimpl/amber_compiler.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/tplimpl/embedded/generate/generate.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/tplimpl/embedded/templates.autogen.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/tplimpl/template.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/tplimpl/templateFuncster.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/tplimpl/templateProvider.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/tplimpl/template_ast_transformers.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/tplimpl/template_errors.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/tplimpl/template_funcs.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/transform/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/transform/remarshal.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/transform/transform.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/urls/init.go
+[*] Analyzing: ../../gohugoio/hugo/tpl/urls/urls.go
+[*] Analyzing: ../../gohugoio/hugo/transform/chain.go
+[*] Analyzing: ../../gohugoio/hugo/transform/livereloadinject/livereloadinject.go
+[*] Analyzing: ../../gohugoio/hugo/transform/metainject/hugogenerator.go
+[*] Analyzing: ../../gohugoio/hugo/transform/urlreplacers/absurl.go
+[*] Analyzing: ../../gohugoio/hugo/transform/urlreplacers/absurlreplacer.go
+[*] Analyzing: ../../gohugoio/hugo/watcher/batcher.go
+
+[!] Common package name: partials in tpl/partials and tpl/templates
+[!] Common package name: partials in tpl/partials and tpl/templates
+[!] Common package name: partials in tpl/partials and tpl/templates
+[!] Common package name: partials in tpl/templates and tpl/partials
+Package: helpers
+Struct: ContentSpec
+Location: ../../gohugoio/hugo/helpers/content.go:46:6
+	WMC: 62
+	ATFD: 7
+	TCC: 0.072727
+
+Package: hugolib
+Struct: Page
+Location: ../../gohugoio/hugo/hugolib/page.go:95:6
+	WMC: 456
+	ATFD: 50
+	TCC: 0.082710
+
+Package: hugolib
+Struct: PageOutput
+Location: ../../gohugoio/hugo/hugolib/page_output.go:36:6
+	WMC: 48
+	ATFD: 6
+	TCC: 0.290909
+
+Package: hugolib
+Struct: Site
+Location: ../../gohugoio/hugo/hugolib/site.go:91:6
+	WMC: 349
+	ATFD: 68
+	TCC: 0.169224
+
+Package: resource
+Struct: Image
+Location: ../../gohugoio/hugo/resource/image.go:121:6
+	WMC: 52
+	ATFD: 17
+	TCC: 0.142857
+
+Package: resource
+Struct: transformedResource
+Location: ../../gohugoio/hugo/resource/transform.go:170:6
+	WMC: 50
+	ATFD: 12
+	TCC: 0.290909
+
+Package: tplimpl
+Struct: templateHandler
+Location: ../../gohugoio/hugo/tpl/tplimpl/template.go:86:6
+	WMC: 81
+	ATFD: 9
+	TCC: 0.199275
+
+[*] Total 7 God Structs found.
+
+[!] Total files:        240 ( 46821 LOC)
+[!] Vendor files:         0 (     0 LOC)
+[!] Test files:           0 (     0 LOC)
+[!] Build con files:      0 (     0 LOC)
+[!] Eligible files:     240 ( 46821 LOC)
+
+[!] Total types:             428
+[!] Used struct types:       306
+[!] Total skipped types:     122
+[!]   Skipped interfaces:     64
+[!]   Skipped other:          58
+[!] Vendor files:              0
+[!] Test types:                0
+[!] Build con types:           0
+[!] Eligible types:          428
+
+[!] Total funcs:       1901 ( 31568 LOC)
+[!] Used funcs:        1265 ( 19961 LOC)
+[!] Skipped funcs:      636 ( 11607 LOC)
+[!] Vendor funcs:         0 (     0 LOC)
+[!] Test funcs:           0 (     0 LOC)
+[!] Build con funcs:      0 (     0 LOC)
+[!] Eligible funcs:    1901 ( 31568 LOC)
+
+[!] Unassigned funcs:             120
+[!] LOC from unassigned funcs:   1344
+[!] Max unassigned func: tplimpl.decl.indexOfReplacementStart
+[!]   Path:       ../../gohugoio/hugo/tpl/tplimpl/template_ast_transformers.go:162:1
+[!]   Complexity:     23
+[!]   LOC:            88
+
+[!] Over-assigned funcs:                0
+[!] Sum of over-assignments:            0
+[!] Sum of over-assigned func LOC:      0
+[!] Sum of over-represented LOC:        0
+[!] Max over-assigned: ..
+[!]   Path:             -
+[!]   Over-assignments:      0
+[!]   Complexity:            0
+[!]   LOC:                   0
+
+[!] Sum of all func complexity:    6995
+[!] Sum of used func complexity:   4336
+[!] Sum of struct WMC:             4336
+
+[!] Skipped Types (no underlying struct):
+[!]     1. Alias Format @ output/outputFormat.go:342
+[!]     2. Alias Type @ media/mediaType.go:350
+[!]     3. AuthorList map[string]Author @ hugolib/author.go:17
+[!]     4. AuthorSocial map[string]string @ hugolib/author.go:45
+[!]     5. Chain []Transformer @ transform/chain.go:45
+[!]     6. DocProvider func() map[string]interface{} @ docshelper/docs.go:32
+[!]     7. Format string @ parser/metadecoders/format.go:22
+[!]     8. Formats []Format @ output/outputFormat.go:170
+[!]     9. HugoVersionString string @ helpers/hugo.go:52
+[!]    10. IndexConfigs []IndexConfig @ related/inverted_index.go:85
+[!]    11. ItemType int @ parser/pageparser/item.go:99
+[!]    12. Items []Item @ parser/pageparser/item.go:27
+[!]    13. Languages []*Language @ langs/language.go:103
+[!]    14. LineMatcherFn func(m LineMatcher) bool @ common/herrors/error_locator.go:90
+[!]    15. Menu []*MenuEntry @ hugolib/menu.go:41
+[!]    16. Menus map[string]*Menu @ hugolib/menu.go:44
+[!]    17. OpenReadSeekCloser func() (hugio.ReadSeekCloser, error) @ resource/resource.go:141
+[!]    18. OrderedTaxonomy []OrderedTaxonomyEntry @ hugolib/taxonomy.go:51
+[!]    19. OutputFormats []*OutputFormat @ hugolib/page_output.go:165
+[!]    20. PageMenus map[string]*MenuEntry @ hugolib/menu.go:47
+[!]    21. Pages []*Page @ hugolib/page.go:499
+[!]    22. PagesGroup []PageGroup @ hugolib/pageGroup.go:70
+[!]    23. PermalinkOverrides map[string]pathPattern @ hugolib/permalinks.go:36
+[!]    24. Resources []Resource @ resource/resource.go:151
+[!]    25. SiteInfos []*SiteInfo @ hugolib/site.go:367
+[!]    26. SiteSocial map[string]string @ hugolib/site.go:456
+[!]    27. StringKeyword string @ related/inverted_index.go:432
+[!]    28. Taxonomy map[string]WeightedPages @ hugolib/taxonomy.go:33
+[!]    29. TaxonomyList map[string]Taxonomy @ hugolib/taxonomy.go:23
+[!]    30. TemplateFuncsNamespaces []*TemplateFuncsNamespace @ tpl/internal/templatefuncsRegistry.go:59
+[!]    31. Transformer func(ft FromTo) error @ transform/chain.go:24
+[!]    32. Translations map[string]*Page @ hugolib/translations.go:19
+[!]    33. Types []Type @ media/mediaType.go:164
+[!]    34. WeightedPages []WeightedPage @ hugolib/taxonomy.go:37
+[!]    35. bundleDirType int @ hugolib/fileInfo.go:91
+[!]    36. bySum []result @ metrics/metrics.go:186
+[!]    37. contentHandler func(ctx *handlerContext) handlerResult @ hugolib/pagebundler_handlers.go:182
+[!]    38. contribCounts []countribCount @ releaser/git.go:182
+[!]    39. decl map[string]string @ tpl/tplimpl/template_ast_transformers.go:25
+[!]    40. dirState int @ hugolib/pagebundler_capture.go:307
+[!]    41. frontMatterFieldHandler func(d *FrontMatterDescriptor) (bool, error) @ hugolib/pagemeta/page_frontmatter.go:142
+[!]    42. frontmatterFieldHandlers int @ hugolib/pagemeta/page_frontmatter.go:364
+[!]    43. gitInfos []gitInfo @ releaser/git.go:148
+[!]    44. lineNumberExtractor func(e error) (int, int) @ common/herrors/line_number_extractors.go:36
+[!]    45. mapKeyValues []reflect.Value @ hugolib/pageGroup.go:31
+[!]    46. matchState int @ transform/urlreplacers/absurlreplacer.go:24
+[!]    47. menuEntryBy func(m1, m2 *MenuEntry) bool @ hugolib/menu.go:140
+[!]    48. oiBy func(i1, i2 *OrderedTaxonomyEntry) bool @ hugolib/taxonomy.go:143
+[!]    49. pageBy func(p1, p2 *Page) bool @ hugolib/pageSort.go:37
+[!]    50. pageToPermaAttribute func(*Page, string) (string, error) @ hugolib/permalinks.go:33
+[!]    51. pagers []*Pager @ hugolib/pagination.go:58
+[!]    52. paginationURLFactory func(int) string @ hugolib/pagination.go:75
+[!]    53. pathLangFileFis []pathLangFileFi @ hugolib/pagebundler_capture.go:594
+[!]    54. pathPattern string @ hugolib/permalinks.go:29
+[!]    55. ranks []*rank @ related/inverted_index.go:193
+[!]    56. releaseNotesState int @ releaser/releaser.go:35
+[!]    57. stateFunc func(*absurllexer) stateFunc @ transform/urlreplacers/absurlreplacer.go:54
+[!]    58. stateFunc func(*pageLexer) stateFunc @ parser/pageparser/pagelexer.go:30
+Execution time: 267.729ms

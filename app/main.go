@@ -176,7 +176,7 @@ func analyze(path string) ([]Struct, *Stats) {
 	// }
 
 	fset := token.NewFileSet()
-	stats := NewStats()
+	stats := NewStats(path)
 	structs, methods := parsePath(fset, stats, path)
 
 	// Assign the methods to structs

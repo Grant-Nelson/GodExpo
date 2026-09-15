@@ -23,11 +23,11 @@ func parsePath(fset *token.FileSet, stats *Stats, file string) ([]Struct, []Meth
 				if skipVendor && strings.HasSuffix(filepath.ToSlash(path), `/vendor`) {
 					return filepath.SkipDir
 				}
-				return err
+				return nil
 			}
 			if strings.HasSuffix(path, ".go") {
 				if skipTestFiles && strings.HasSuffix(path, "_test.go") {
-					return err
+					return nil
 				}
 
 				f, err := parser.ParseFile(fset, path, nil, parser.ParseComments)
@@ -38,7 +38,7 @@ func parsePath(fset *token.FileSet, stats *Stats, file string) ([]Struct, []Meth
 				if matchBuildConstraints {
 					if expr := readBuildConstraint(f); expr != nil {
 						if !expr.Eval(isBuildConstraint) {
-							return err
+							return nil
 						}
 					}
 				}

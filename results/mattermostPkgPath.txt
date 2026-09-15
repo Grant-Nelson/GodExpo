@@ -1,0 +1,686 @@
+[!] Command: godExpo -bc -mp -st -sv -d ../../mattermost/mattermost
+
+[*] Analyzing: ../../mattermost/mattermost/api4/api.go
+[*] Analyzing: ../../mattermost/mattermost/api4/apitestlib.go
+[*] Analyzing: ../../mattermost/mattermost/api4/brand.go
+[*] Analyzing: ../../mattermost/mattermost/api4/channel.go
+[*] Analyzing: ../../mattermost/mattermost/api4/cluster.go
+[*] Analyzing: ../../mattermost/mattermost/api4/command.go
+[*] Analyzing: ../../mattermost/mattermost/api4/compliance.go
+[*] Analyzing: ../../mattermost/mattermost/api4/data_retention.go
+[*] Analyzing: ../../mattermost/mattermost/api4/elasticsearch.go
+[*] Analyzing: ../../mattermost/mattermost/api4/emoji.go
+[*] Analyzing: ../../mattermost/mattermost/api4/file.go
+[*] Analyzing: ../../mattermost/mattermost/api4/handlers.go
+[*] Analyzing: ../../mattermost/mattermost/api4/image.go
+[*] Analyzing: ../../mattermost/mattermost/api4/integration_action.go
+[*] Analyzing: ../../mattermost/mattermost/api4/job.go
+[*] Analyzing: ../../mattermost/mattermost/api4/ldap.go
+[*] Analyzing: ../../mattermost/mattermost/api4/oauth.go
+[*] Analyzing: ../../mattermost/mattermost/api4/openGraph.go
+[*] Analyzing: ../../mattermost/mattermost/api4/plugin.go
+[*] Analyzing: ../../mattermost/mattermost/api4/post.go
+[*] Analyzing: ../../mattermost/mattermost/api4/preference.go
+[*] Analyzing: ../../mattermost/mattermost/api4/reaction.go
+[*] Analyzing: ../../mattermost/mattermost/api4/role.go
+[*] Analyzing: ../../mattermost/mattermost/api4/saml.go
+[*] Analyzing: ../../mattermost/mattermost/api4/scheme.go
+[*] Analyzing: ../../mattermost/mattermost/api4/status.go
+[*] Analyzing: ../../mattermost/mattermost/api4/system.go
+[*] Analyzing: ../../mattermost/mattermost/api4/team.go
+[*] Analyzing: ../../mattermost/mattermost/api4/terms_of_service.go
+[*] Analyzing: ../../mattermost/mattermost/api4/user.go
+[*] Analyzing: ../../mattermost/mattermost/api4/webhook.go
+[*] Analyzing: ../../mattermost/mattermost/api4/websocket.go
+[*] Analyzing: ../../mattermost/mattermost/app/admin.go
+[*] Analyzing: ../../mattermost/mattermost/app/analytics.go
+[*] Analyzing: ../../mattermost/mattermost/app/app.go
+[*] Analyzing: ../../mattermost/mattermost/app/apptestlib.go
+[*] Analyzing: ../../mattermost/mattermost/app/audit.go
+[*] Analyzing: ../../mattermost/mattermost/app/authentication.go
+[*] Analyzing: ../../mattermost/mattermost/app/authorization.go
+[*] Analyzing: ../../mattermost/mattermost/app/auto_channels.go
+[*] Analyzing: ../../mattermost/mattermost/app/auto_constants.go
+[*] Analyzing: ../../mattermost/mattermost/app/auto_environment.go
+[*] Analyzing: ../../mattermost/mattermost/app/auto_posts.go
+[*] Analyzing: ../../mattermost/mattermost/app/auto_responder.go
+[*] Analyzing: ../../mattermost/mattermost/app/auto_teams.go
+[*] Analyzing: ../../mattermost/mattermost/app/auto_users.go
+[*] Analyzing: ../../mattermost/mattermost/app/brand.go
+[*] Analyzing: ../../mattermost/mattermost/app/channel.go
+[*] Analyzing: ../../mattermost/mattermost/app/cluster.go
+[*] Analyzing: ../../mattermost/mattermost/app/cluster_discovery.go
+[*] Analyzing: ../../mattermost/mattermost/app/cluster_handlers.go
+[*] Analyzing: ../../mattermost/mattermost/app/command.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_away.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_channel_header.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_channel_purpose.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_channel_rename.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_code.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_dnd.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_echo.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_expand_collapse.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_groupmsg.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_help.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_invite.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_invite_people.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_join.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_leave.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_loadtest.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_logout.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_me.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_msg.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_mute.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_offline.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_online.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_open.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_remove.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_search.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_settings.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_shortcuts.go
+[*] Analyzing: ../../mattermost/mattermost/app/command_shrug.go
+[*] Analyzing: ../../mattermost/mattermost/app/compliance.go
+[*] Analyzing: ../../mattermost/mattermost/app/config.go
+[*] Analyzing: ../../mattermost/mattermost/app/data_retention.go
+[*] Analyzing: ../../mattermost/mattermost/app/diagnostics.go
+[*] Analyzing: ../../mattermost/mattermost/app/elasticsearch.go
+[*] Analyzing: ../../mattermost/mattermost/app/email.go
+[*] Analyzing: ../../mattermost/mattermost/app/email_batching.go
+[*] Analyzing: ../../mattermost/mattermost/app/emoji.go
+[*] Analyzing: ../../mattermost/mattermost/app/export.go
+[*] Analyzing: ../../mattermost/mattermost/app/export_converters.go
+[*] Analyzing: ../../mattermost/mattermost/app/extension.go
+[*] Analyzing: ../../mattermost/mattermost/app/file.go
+[*] Analyzing: ../../mattermost/mattermost/app/import.go
+[*] Analyzing: ../../mattermost/mattermost/app/import_functions.go
+[*] Analyzing: ../../mattermost/mattermost/app/import_types.go
+[*] Analyzing: ../../mattermost/mattermost/app/import_validators.go
+[*] Analyzing: ../../mattermost/mattermost/app/integration_action.go
+[*] Analyzing: ../../mattermost/mattermost/app/job.go
+[*] Analyzing: ../../mattermost/mattermost/app/ldap.go
+[*] Analyzing: ../../mattermost/mattermost/app/license.go
+[*] Analyzing: ../../mattermost/mattermost/app/login.go
+[*] Analyzing: ../../mattermost/mattermost/app/migrations.go
+[*] Analyzing: ../../mattermost/mattermost/app/notification.go
+[*] Analyzing: ../../mattermost/mattermost/app/notification_email.go
+[*] Analyzing: ../../mattermost/mattermost/app/notification_push.go
+[*] Analyzing: ../../mattermost/mattermost/app/oauth.go
+[*] Analyzing: ../../mattermost/mattermost/app/opengraph.go
+[*] Analyzing: ../../mattermost/mattermost/app/options.go
+[*] Analyzing: ../../mattermost/mattermost/app/permissions.go
+[*] Analyzing: ../../mattermost/mattermost/app/plugin.go
+[*] Analyzing: ../../mattermost/mattermost/app/plugin_api.go
+[*] Analyzing: ../../mattermost/mattermost/app/plugin_commands.go
+[*] Analyzing: ../../mattermost/mattermost/app/plugin_install.go
+[*] Analyzing: ../../mattermost/mattermost/app/plugin_key_value_store.go
+[*] Analyzing: ../../mattermost/mattermost/app/plugin_requests.go
+[*] Analyzing: ../../mattermost/mattermost/app/plugin_statuses.go
+[*] Analyzing: ../../mattermost/mattermost/app/post.go
+[*] Analyzing: ../../mattermost/mattermost/app/post_metadata.go
+[*] Analyzing: ../../mattermost/mattermost/app/preference.go
+[*] Analyzing: ../../mattermost/mattermost/app/ratelimit.go
+[*] Analyzing: ../../mattermost/mattermost/app/reaction.go
+[*] Analyzing: ../../mattermost/mattermost/app/role.go
+[*] Analyzing: ../../mattermost/mattermost/app/saml.go
+[*] Analyzing: ../../mattermost/mattermost/app/scheme.go
+[*] Analyzing: ../../mattermost/mattermost/app/security_update_check.go
+[*] Analyzing: ../../mattermost/mattermost/app/server.go
+[*] Analyzing: ../../mattermost/mattermost/app/session.go
+[*] Analyzing: ../../mattermost/mattermost/app/slack.go
+[*] Analyzing: ../../mattermost/mattermost/app/slackimport.go
+[*] Analyzing: ../../mattermost/mattermost/app/status.go
+[*] Analyzing: ../../mattermost/mattermost/app/team.go
+[*] Analyzing: ../../mattermost/mattermost/app/terms_of_service.go
+[*] Analyzing: ../../mattermost/mattermost/app/timezone.go
+[*] Analyzing: ../../mattermost/mattermost/app/user.go
+[*] Analyzing: ../../mattermost/mattermost/app/user_agent.go
+[*] Analyzing: ../../mattermost/mattermost/app/user_terms_of_service.go
+[*] Analyzing: ../../mattermost/mattermost/app/web_conn.go
+[*] Analyzing: ../../mattermost/mattermost/app/web_hub.go
+[*] Analyzing: ../../mattermost/mattermost/app/webhook.go
+[*] Analyzing: ../../mattermost/mattermost/app/websocket_router.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/channel.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/channelargs.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/cmdtestlib.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/command.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/commandargs.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/config.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/export.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/import.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/init.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/jobserver.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/ldap.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/license.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/logs.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/output.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/permissions.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/plugin.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/reset.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/roles.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/root.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/sampledata.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/server.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/team.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/teamargs.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/test.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/user.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/userargs.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/version.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/commands/webhook.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/mattermost/main.go
+[*] Analyzing: ../../mattermost/mattermost/cmd/platform/main.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/account_migration.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/cluster.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/compliance.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/data_retention.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/elasticsearch.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/jobs/data_retention.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/jobs/elasticsearch.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/jobs/ldap_sync.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/jobs/message_export.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/ldap.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/message_export.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/metrics.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/mfa.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/oauthproviders.go
+[*] Analyzing: ../../mattermost/mattermost/einterfaces/saml.go
+[*] Analyzing: ../../mattermost/mattermost/imports/placeholder.go
+[*] Analyzing: ../../mattermost/mattermost/jobs/interfaces/migrations_interface.go
+[*] Analyzing: ../../mattermost/mattermost/jobs/interfaces/plugins_interface.go
+[*] Analyzing: ../../mattermost/mattermost/jobs/jobs.go
+[*] Analyzing: ../../mattermost/mattermost/jobs/jobs_watcher.go
+[*] Analyzing: ../../mattermost/mattermost/jobs/schedulers.go
+[*] Analyzing: ../../mattermost/mattermost/jobs/server.go
+[*] Analyzing: ../../mattermost/mattermost/jobs/workers.go
+[*] Analyzing: ../../mattermost/mattermost/manualtesting/manual_testing.go
+[*] Analyzing: ../../mattermost/mattermost/manualtesting/test_autolink.go
+[*] Analyzing: ../../mattermost/mattermost/migrations/advanced_permissions_phase_2.go
+[*] Analyzing: ../../mattermost/mattermost/migrations/migrations.go
+[*] Analyzing: ../../mattermost/mattermost/migrations/migrationstestlib.go
+[*] Analyzing: ../../mattermost/mattermost/migrations/scheduler.go
+[*] Analyzing: ../../mattermost/mattermost/migrations/worker.go
+[*] Analyzing: ../../mattermost/mattermost/mlog/default.go
+[*] Analyzing: ../../mattermost/mattermost/mlog/global.go
+[*] Analyzing: ../../mattermost/mattermost/mlog/human/entry.go
+[*] Analyzing: ../../mattermost/mattermost/mlog/human/logrus_writer.go
+[*] Analyzing: ../../mattermost/mattermost/mlog/human/parser.go
+[*] Analyzing: ../../mattermost/mattermost/mlog/human/process.go
+[*] Analyzing: ../../mattermost/mattermost/mlog/human/simple_writer.go
+[*] Analyzing: ../../mattermost/mattermost/mlog/log.go
+[*] Analyzing: ../../mattermost/mattermost/mlog/stdlog.go
+[*] Analyzing: ../../mattermost/mattermost/mlog/sugar.go
+[*] Analyzing: ../../mattermost/mattermost/model/access.go
+[*] Analyzing: ../../mattermost/mattermost/model/analytics_row.go
+[*] Analyzing: ../../mattermost/mattermost/model/audit.go
+[*] Analyzing: ../../mattermost/mattermost/model/audits.go
+[*] Analyzing: ../../mattermost/mattermost/model/authorize.go
+[*] Analyzing: ../../mattermost/mattermost/model/builtin.go
+[*] Analyzing: ../../mattermost/mattermost/model/bundle_info.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel_count.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel_data.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel_list.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel_member.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel_member_history.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel_member_history_result.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel_mentions.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel_search.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel_stats.go
+[*] Analyzing: ../../mattermost/mattermost/model/channel_view.go
+[*] Analyzing: ../../mattermost/mattermost/model/client4.go
+[*] Analyzing: ../../mattermost/mattermost/model/cluster_discovery.go
+[*] Analyzing: ../../mattermost/mattermost/model/cluster_info.go
+[*] Analyzing: ../../mattermost/mattermost/model/cluster_message.go
+[*] Analyzing: ../../mattermost/mattermost/model/cluster_stats.go
+[*] Analyzing: ../../mattermost/mattermost/model/command.go
+[*] Analyzing: ../../mattermost/mattermost/model/command_args.go
+[*] Analyzing: ../../mattermost/mattermost/model/command_response.go
+[*] Analyzing: ../../mattermost/mattermost/model/command_webhook.go
+[*] Analyzing: ../../mattermost/mattermost/model/compliance.go
+[*] Analyzing: ../../mattermost/mattermost/model/compliance_post.go
+[*] Analyzing: ../../mattermost/mattermost/model/config.go
+[*] Analyzing: ../../mattermost/mattermost/model/data_retention_policy.go
+[*] Analyzing: ../../mattermost/mattermost/model/emoji.go
+[*] Analyzing: ../../mattermost/mattermost/model/emoji_data.go
+[*] Analyzing: ../../mattermost/mattermost/model/emoji_search.go
+[*] Analyzing: ../../mattermost/mattermost/model/file.go
+[*] Analyzing: ../../mattermost/mattermost/model/file_info.go
+[*] Analyzing: ../../mattermost/mattermost/model/gitlab/gitlab.go
+[*] Analyzing: ../../mattermost/mattermost/model/gitlab.go
+[*] Analyzing: ../../mattermost/mattermost/model/incoming_webhook.go
+[*] Analyzing: ../../mattermost/mattermost/model/initial_load.go
+[*] Analyzing: ../../mattermost/mattermost/model/integration_action.go
+[*] Analyzing: ../../mattermost/mattermost/model/job.go
+[*] Analyzing: ../../mattermost/mattermost/model/ldap.go
+[*] Analyzing: ../../mattermost/mattermost/model/license.go
+[*] Analyzing: ../../mattermost/mattermost/model/manifest.go
+[*] Analyzing: ../../mattermost/mattermost/model/message_export.go
+[*] Analyzing: ../../mattermost/mattermost/model/mfa_secret.go
+[*] Analyzing: ../../mattermost/mattermost/model/migration.go
+[*] Analyzing: ../../mattermost/mattermost/model/oauth.go
+[*] Analyzing: ../../mattermost/mattermost/model/outgoing_webhook.go
+[*] Analyzing: ../../mattermost/mattermost/model/permission.go
+[*] Analyzing: ../../mattermost/mattermost/model/plugin_key_value.go
+[*] Analyzing: ../../mattermost/mattermost/model/plugin_status.go
+[*] Analyzing: ../../mattermost/mattermost/model/plugins_response.go
+[*] Analyzing: ../../mattermost/mattermost/model/post.go
+[*] Analyzing: ../../mattermost/mattermost/model/post_embed.go
+[*] Analyzing: ../../mattermost/mattermost/model/post_list.go
+[*] Analyzing: ../../mattermost/mattermost/model/post_metadata.go
+[*] Analyzing: ../../mattermost/mattermost/model/post_search_results.go
+[*] Analyzing: ../../mattermost/mattermost/model/preference.go
+[*] Analyzing: ../../mattermost/mattermost/model/preferences.go
+[*] Analyzing: ../../mattermost/mattermost/model/push_notification.go
+[*] Analyzing: ../../mattermost/mattermost/model/push_response.go
+[*] Analyzing: ../../mattermost/mattermost/model/reaction.go
+[*] Analyzing: ../../mattermost/mattermost/model/role.go
+[*] Analyzing: ../../mattermost/mattermost/model/saml.go
+[*] Analyzing: ../../mattermost/mattermost/model/scheduled_task.go
+[*] Analyzing: ../../mattermost/mattermost/model/scheme.go
+[*] Analyzing: ../../mattermost/mattermost/model/search_params.go
+[*] Analyzing: ../../mattermost/mattermost/model/security_bulletin.go
+[*] Analyzing: ../../mattermost/mattermost/model/session.go
+[*] Analyzing: ../../mattermost/mattermost/model/slack_attachment.go
+[*] Analyzing: ../../mattermost/mattermost/model/status.go
+[*] Analyzing: ../../mattermost/mattermost/model/suggest_command.go
+[*] Analyzing: ../../mattermost/mattermost/model/switch_request.go
+[*] Analyzing: ../../mattermost/mattermost/model/system.go
+[*] Analyzing: ../../mattermost/mattermost/model/team.go
+[*] Analyzing: ../../mattermost/mattermost/model/team_member.go
+[*] Analyzing: ../../mattermost/mattermost/model/team_search.go
+[*] Analyzing: ../../mattermost/mattermost/model/team_stats.go
+[*] Analyzing: ../../mattermost/mattermost/model/terms_of_service.go
+[*] Analyzing: ../../mattermost/mattermost/model/timezone.go
+[*] Analyzing: ../../mattermost/mattermost/model/token.go
+[*] Analyzing: ../../mattermost/mattermost/model/user.go
+[*] Analyzing: ../../mattermost/mattermost/model/user_access_token.go
+[*] Analyzing: ../../mattermost/mattermost/model/user_access_token_search.go
+[*] Analyzing: ../../mattermost/mattermost/model/user_autocomplete.go
+[*] Analyzing: ../../mattermost/mattermost/model/user_search.go
+[*] Analyzing: ../../mattermost/mattermost/model/user_terms_of_service.go
+[*] Analyzing: ../../mattermost/mattermost/model/users_stats.go
+[*] Analyzing: ../../mattermost/mattermost/model/utils.go
+[*] Analyzing: ../../mattermost/mattermost/model/version.go
+[*] Analyzing: ../../mattermost/mattermost/model/websocket_client.go
+[*] Analyzing: ../../mattermost/mattermost/model/websocket_message.go
+[*] Analyzing: ../../mattermost/mattermost/model/websocket_request.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/api.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/client.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/client_rpc.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/client_rpc_generated.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/context.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/doc.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/environment.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/hclog_adapter.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/hooks.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/http.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/interface_generator/main.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/io_rpc.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/plugintest/api.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/plugintest/doc.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/plugintest/hooks.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/plugintest/mock/mock.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/scheduler/plugin.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/scheduler/scheduler.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/scheduler/worker.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/supervisor.go
+[*] Analyzing: ../../mattermost/mattermost/plugin/valid.go
+[*] Analyzing: ../../mattermost/mattermost/services/configservice/configservice.go
+[*] Analyzing: ../../mattermost/mattermost/services/filesstore/filesstore.go
+[*] Analyzing: ../../mattermost/mattermost/services/filesstore/localstore.go
+[*] Analyzing: ../../mattermost/mattermost/services/filesstore/mocks/FileBackend.go
+[*] Analyzing: ../../mattermost/mattermost/services/filesstore/s3store.go
+[*] Analyzing: ../../mattermost/mattermost/services/httpservice/client.go
+[*] Analyzing: ../../mattermost/mattermost/services/httpservice/httpservice.go
+[*] Analyzing: ../../mattermost/mattermost/services/mailservice/inbucket.go
+[*] Analyzing: ../../mattermost/mattermost/services/mailservice/mail.go
+[*] Analyzing: ../../mattermost/mattermost/store/constants.go
+[*] Analyzing: ../../mattermost/mattermost/store/layered_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/layered_store_hints.go
+[*] Analyzing: ../../mattermost/mattermost/store/layered_store_supplier.go
+[*] Analyzing: ../../mattermost/mattermost/store/local_cache_supplier.go
+[*] Analyzing: ../../mattermost/mattermost/store/local_cache_supplier_reactions.go
+[*] Analyzing: ../../mattermost/mattermost/store/local_cache_supplier_roles.go
+[*] Analyzing: ../../mattermost/mattermost/store/local_cache_supplier_schemes.go
+[*] Analyzing: ../../mattermost/mattermost/store/redis_supplier.go
+[*] Analyzing: ../../mattermost/mattermost/store/redis_supplier_reactions.go
+[*] Analyzing: ../../mattermost/mattermost/store/redis_supplier_roles.go
+[*] Analyzing: ../../mattermost/mattermost/store/redis_supplier_schemes.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/audit_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/channel_member_history_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/channel_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/cluster_discovery_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/command_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/command_webhook_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/compliance_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/emoji_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/file_info_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/job_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/license_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/oauth_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/plugin_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/post_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/preference_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/role_supplier.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/scheme_supplier.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/session_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/status_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/supplier.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/supplier_reactions.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/system_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/team_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/terms_of_service_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/tokens_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/upgrade.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/user_access_token_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/user_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/user_terms_of_service.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/utils.go
+[*] Analyzing: ../../mattermost/mattermost/store/sqlstore/webhook_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/audit_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/channel_member_history_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/channel_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/cluster_discovery_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/command_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/command_webhook_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/compliance_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/docker.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/emoji_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/file_info_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/job_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/license_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/AuditStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/ChannelMemberHistoryStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/ChannelStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/ClusterDiscoveryStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/CommandStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/CommandWebhookStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/ComplianceStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/EmojiStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/FileInfoStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/JobStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/LayeredStoreDatabaseLayer.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/LayeredStoreSupplier.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/LicenseStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/OAuthStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/PluginStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/PostStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/PreferenceStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/ReactionStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/RoleStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/SchemeStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/SessionStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/SqlStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/SqlSupplier.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/StatusStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/Store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/SystemStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/TeamStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/TermsOfServiceStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/TokenStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/UserAccessTokenStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/UserStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/UserTermsOfServiceStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/mocks/WebhookStore.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/oauth_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/plugin_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/post_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/preference_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/reaction_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/role_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/scheme_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/session_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/status_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/storetestlib.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/system_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/team_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/terms_of_service_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/user_access_token_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/user_store.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/user_terms_of_service.go
+[*] Analyzing: ../../mattermost/mattermost/store/storetest/webhook_store.go
+[*] Analyzing: ../../mattermost/mattermost/utils/api.go
+[*] Analyzing: ../../mattermost/mattermost/utils/authorization.go
+[*] Analyzing: ../../mattermost/mattermost/utils/config.go
+[*] Analyzing: ../../mattermost/mattermost/utils/emoji.go
+[*] Analyzing: ../../mattermost/mattermost/utils/extract.go
+[*] Analyzing: ../../mattermost/mattermost/utils/file.go
+[*] Analyzing: ../../mattermost/mattermost/utils/hash.go
+[*] Analyzing: ../../mattermost/mattermost/utils/html.go
+[*] Analyzing: ../../mattermost/mattermost/utils/i18n.go
+[*] Analyzing: ../../mattermost/mattermost/utils/jsonutils/json.go
+[*] Analyzing: ../../mattermost/mattermost/utils/license.go
+[*] Analyzing: ../../mattermost/mattermost/utils/lru.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/autolink.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/block_quote.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/blocks.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/document.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/fenced_code.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/html.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/html_entities.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/indented_code.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/inlines.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/inspect.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/lines.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/links.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/list.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/markdown.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/paragraph.go
+[*] Analyzing: ../../mattermost/mattermost/utils/markdown/reference_definition.go
+[*] Analyzing: ../../mattermost/mattermost/utils/password.go
+[*] Analyzing: ../../mattermost/mattermost/utils/path.go
+[*] Analyzing: ../../mattermost/mattermost/utils/random.go
+[*] Analyzing: ../../mattermost/mattermost/utils/subpath.go
+[*] Analyzing: ../../mattermost/mattermost/utils/testutils/mocked_http_service.go
+[*] Analyzing: ../../mattermost/mattermost/utils/testutils/static_config_service.go
+[*] Analyzing: ../../mattermost/mattermost/utils/testutils/testutils.go
+[*] Analyzing: ../../mattermost/mattermost/utils/textgeneration.go
+[*] Analyzing: ../../mattermost/mattermost/utils/time.go
+[*] Analyzing: ../../mattermost/mattermost/utils/timezone.go
+[*] Analyzing: ../../mattermost/mattermost/utils/urlencode.go
+[*] Analyzing: ../../mattermost/mattermost/utils/utils.go
+[*] Analyzing: ../../mattermost/mattermost/web/context.go
+[*] Analyzing: ../../mattermost/mattermost/web/handlers.go
+[*] Analyzing: ../../mattermost/mattermost/web/params.go
+[*] Analyzing: ../../mattermost/mattermost/web/saml.go
+[*] Analyzing: ../../mattermost/mattermost/web/static.go
+[*] Analyzing: ../../mattermost/mattermost/web/web.go
+[*] Analyzing: ../../mattermost/mattermost/web/webhook.go
+[*] Analyzing: ../../mattermost/mattermost/wsapi/api.go
+[*] Analyzing: ../../mattermost/mattermost/wsapi/status.go
+[*] Analyzing: ../../mattermost/mattermost/wsapi/system.go
+[*] Analyzing: ../../mattermost/mattermost/wsapi/user.go
+[*] Analyzing: ../../mattermost/mattermost/wsapi/websocket_handler.go
+
+Package: api4
+Struct: TestHelper
+Location: ../../mattermost/mattermost/api4/apitestlib.go:34:6
+	WMC: 92
+	ATFD: 19
+	TCC: 0.245847
+
+Package: app
+Struct: LoadTestProvider
+Location: ../../mattermost/mattermost/app/command_loadtest.go:65:6
+	WMC: 58
+	ATFD: 23
+	TCC: 0.000000
+
+Package: app
+Struct: WebConn
+Location: ../../mattermost/mattermost/app/web_conn.go:29:6
+	WMC: 63
+	ATFD: 9
+	TCC: 0.257143
+
+Package: model
+Struct: Client4
+Location: ../../mattermost/mattermost/model/client4.go:55:6
+	WMC: 741
+	ATFD: 16
+	TCC: 0.002636
+
+Package: model
+Struct: Post
+Location: ../../mattermost/mattermost/model/post.go:55:6
+	WMC: 71
+	ATFD: 10
+	TCC: 0.215686
+
+Package: model
+Struct: User
+Location: ../../mattermost/mattermost/model/user.go:50:6
+	WMC: 99
+	ATFD: 14
+	TCC: 0.289855
+
+Package: sqlstore
+Struct: SqlChannelStore
+Location: ../../mattermost/mattermost/store/sqlstore/channel_store.go:37:6
+	WMC: 332
+	ATFD: 47
+	TCC: 0.028086
+
+Package: sqlstore
+Struct: SqlOAuthStore
+Location: ../../mattermost/mattermost/store/sqlstore/oauth_store.go:15:6
+	WMC: 63
+	ATFD: 13
+	TCC: 0.000000
+
+Package: sqlstore
+Struct: SqlPostStore
+Location: ../../mattermost/mattermost/store/sqlstore/post_store.go:21:6
+	WMC: 187
+	ATFD: 33
+	TCC: 0.015015
+
+Package: sqlstore
+Struct: SqlSupplier
+Location: ../../mattermost/mattermost/store/sqlstore/supplier.go:99:6
+	WMC: 240
+	ATFD: 26
+	TCC: 0.130063
+
+Package: sqlstore
+Struct: SqlTeamStore
+Location: ../../mattermost/mattermost/store/sqlstore/team_store.go:21:6
+	WMC: 140
+	ATFD: 16
+	TCC: 0.000000
+
+Package: sqlstore
+Struct: SqlUserStore
+Location: ../../mattermost/mattermost/store/sqlstore/user_store.go:35:6
+	WMC: 193
+	ATFD: 39
+	TCC: 0.009398
+
+Package: store
+Struct: LocalCacheSupplier
+Location: ../../mattermost/mattermost/store/local_cache_supplier.go:27:6
+	WMC: 49
+	ATFD: 8
+	TCC: 0.028490
+
+[*] Total 13 God Structs found.
+
+[!] Total files:        494 (120449 LOC)
+[!] Vendor files:         0 (     0 LOC)
+[!] Test files:           0 (     0 LOC)
+[!] Build con files:      0 (     0 LOC)
+[!] Eligible files:     494 (120449 LOC)
+
+[!] Total types:             791
+[!] Used struct types:       682
+[!] Total skipped types:     109
+[!]   Skipped interfaces:     66
+[!]   Skipped other:          43
+[!] Vendor files:              0
+[!] Test types:                0
+[!] Build con types:           0
+[!] Eligible types:          791
+
+[!] Total funcs:       5276 ( 95451 LOC)
+[!] Used funcs:        3697 ( 56357 LOC)
+[!] Skipped funcs:     1579 ( 39094 LOC)
+[!] Vendor funcs:         0 (     0 LOC)
+[!] Test funcs:           0 (     0 LOC)
+[!] Build con funcs:      0 (     0 LOC)
+[!] Eligible funcs:    5276 ( 95451 LOC)
+
+[!] Unassigned funcs:              21
+[!] LOC from unassigned funcs:    139
+[!] Max unassigned func: model.ChannelList.Etag
+[!]   Path:       ../../mattermost/mattermost/model/channel_list.go:21:1
+[!]   Complexity:      4
+[!]   LOC:            21
+
+[!] Over-assigned funcs:                0
+[!] Sum of over-assignments:            0
+[!] Sum of over-assigned func LOC:      0
+[!] Sum of over-represented LOC:        0
+[!] Max over-assigned: ..
+[!]   Path:             -
+[!]   Over-assignments:      0
+[!]   Complexity:            0
+[!]   LOC:                   0
+
+[!] Sum of all func complexity:   18889
+[!] Sum of used func complexity:  12151
+[!] Sum of struct WMC:            12151
+
+[!] Skipped Types (no underlying struct):
+[!]     1. AnalyticsRows []*AnalyticsRow @ model/analytics_row.go:16
+[!]     2. AnythingOfTypeArgument mock.AnythingOfTypeArgument @ plugin/plugintest/mock/mock.go:18
+[!]     3. Arguments mock.Arguments @ plugin/plugintest/mock/mock.go:17
+[!]     4. Audits []Audit @ model/audits.go:11
+[!]     5. ByChannelDisplayName model.ChannelList @ store/storetest/channel_store.go:1819
+[!]     6. ByUserId []*model.Status @ store/storetest/status_store.go:111
+[!]     7. Call mock.Call @ plugin/plugintest/mock/mock.go:19
+[!]     8. ChannelList []*Channel @ model/channel_list.go:11
+[!]     9. ChannelMembers []ChannelMember @ model/channel_member.go:48
+[!]    10. ClusterMessageHandler func(msg *model.ClusterMessage) @ einterfaces/cluster.go:10
+[!]    11. Command cobra.Command @ cmd/mattermost/commands/root.go:10
+[!]    12. Compliances []Compliance @ model/compliance.go:38
+[!]    13. ConfigFunc func() *Config @ model/config.go:1925
+[!]    14. Context web.Context @ api4/handlers.go:12
+[!]    15. DialContextFunction func(ctx context.Context, network, addr string) (net.Conn, error) @ services/httpservice/client.go:58
+[!]    16. Field zapcore.Field @ mlog/log.go:28
+[!]    17. JSONMessageHeaderInbucket []struct {
+	Mailbox			string
+	ID			string	`json:"Id"`
+	From, Subject, Date	string
+	To			[]string
+	Size			int
+} @ services/mailservice/inbucket.go:22
+[!]    18. LayeredStoreHint int @ store/layered_store_hints.go:6
+[!]    19. LogFunc func(string, ...Field) @ mlog/global.go:28
+[!]    20. Mock mock.Mock @ plugin/plugintest/mock/mock.go:20
+[!]    21. NotificationType string @ app/notification_push.go:18
+[!]    22. Option func(a *App) @ app/options.go:10
+[!]    23. PluginStatuses []*PluginStatus @ model/plugin_status.go:31
+[!]    24. PostEmbedType string @ model/post_embed.go:12
+[!]    25. PostSearchMatches map[string][]string @ model/post_search_results.go:11
+[!]    26. Preferences []Preference @ model/preferences.go:11
+[!]    27. PushResponse map[string]string @ model/push_response.go:19
+[!]    28. QueryFunction func(LayeredStoreSupplier) *LayeredStoreSupplierResult @ store/layered_store.go:59
+[!]    29. SecurityBulletins []SecurityBulletin @ model/security_bulletin.go:16
+[!]    30. StoreChannel chan StoreResult @ store/store.go:17
+[!]    31. StringArray []string @ model/utils.go:37
+[!]    32. StringInterface map[string]interface{} @ model/utils.go:35
+[!]    33. StringMap map[string]string @ model/utils.go:36
+[!]    34. SupportedTimezones []string @ model/timezone.go:11
+[!]    35. TaskFunc func() @ model/scheduled_task.go:11
+[!]    36. TestingT mock.TestingT @ plugin/plugintest/mock/mock.go:21
+[!]    37. TokenLocation int @ app/authentication.go:14
+[!]    38. allChannelMembers []allChannelMember @ store/sqlstore/channel_store.go:184
+[!]    39. apiImplCreatorFunc func(*model.Manifest) API @ plugin/environment.go:20
+[!]    40. channelMemberWithSchemeRolesList []channelMemberWithSchemeRoles @ store/sqlstore/channel_store.go:87
+[!]    41. delimiterType int @ utils/markdown/inlines.go:104
+[!]    42. multiPluginHookRunnerFunc func(hooks Hooks) bool @ plugin/environment.go:25
+[!]    43. teamMemberWithSchemeRolesList []teamMemberWithSchemeRoles @ store/sqlstore/team_store.go:56
+Execution time: 982.759667ms
